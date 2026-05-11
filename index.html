@@ -562,9 +562,9 @@
   <div id="intro-screen">
     <div class="intro-icon">⚔️</div>
     <div class="intro-heading">Ready to Battle?</div>
-    <p class="intro-sub">12 questions on modal verbs. Teams alternate turns. The team with the most points wins. Tick-tock — you only have 15 seconds per question.</p>
+    <p class="intro-sub">12 questions on modal verbs. Teams alternate turns. The team with the most points wins. Tick-tock — you only have 8 seconds per question.</p>
     <div class="rules">
-      <div class="rule"><strong>⏱ 15 seconds</strong>Answer before time runs out</div>
+      <div class="rule"><strong>⏱ 8 seconds</strong>Answer before time runs out</div>
       <div class="rule"><strong>🔀 Alternating</strong>Teams take turns answering</div>
       <div class="rule"><strong>📖 Explained</strong>Every answer is explained</div>
       <div class="rule"><strong>🏆 12 questions</strong>Highest score wins</div>
@@ -716,7 +716,7 @@ function loadQuestion() {
 
 function startTimer() {
   clearInterval(timerInterval);
-  timeLeft = 15;
+  timeLeft = 8;
   renderTimer();
   timerInterval = setInterval(() => {
     timeLeft--;
@@ -729,7 +729,7 @@ function renderTimer() {
   const num = document.getElementById('timer-num');
   const circle = document.getElementById('timer-circle');
   num.textContent = timeLeft;
-  const offset = circ - (timeLeft / 15) * circ;
+  const offset = circ - (timeLeft / 8) * circ;
   circle.style.strokeDashoffset = offset;
   if (timeLeft <= 5) {
     num.classList.add('timer-urgent');
